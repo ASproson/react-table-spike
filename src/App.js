@@ -91,7 +91,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello React!</h1>
+      <h1>React Table Demo</h1>
       <div>
         <Table columns={columns} data={data} />
       </div>
