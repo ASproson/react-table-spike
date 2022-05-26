@@ -1,5 +1,10 @@
 import React from "react";
-import { useTable, useGlobalFilter, useAsyncDebounce } from "react-table";
+import {
+  useTable,
+  useGlobalFilter,
+  useAsyncDebounce,
+  useSortBy,
+} from "react-table";
 import GlobalFilter from "./GlobalFilter";
 
 const Table = ({ columns, data }) => {
@@ -18,7 +23,8 @@ const Table = ({ columns, data }) => {
       columns,
       data,
     },
-    useGlobalFilter
+    useGlobalFilter,
+    useSortBy
   );
 
   // Render the UI for table
@@ -31,12 +37,22 @@ const Table = ({ columns, data }) => {
       />
       <table {...getTableProps()} border="1">
         <thead>
-          {/* Collect column headers from useTable state */}
           {headerGroups.map((headerGroup) => (
-            // For each header create a column header
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                // Add the sorting props to control sorting. For this example
+                // we can add them into the header props
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  {/* Add a sort direction indicator */}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " ▼"
+                        : " ▲"
+                      : " ~"}
+                  </span>
+                </th>
               ))}
             </tr>
           ))}
