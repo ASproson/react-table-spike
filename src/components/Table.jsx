@@ -5,7 +5,6 @@ import {
   ChevronRightIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/solid";
-// import classNames from "classnames";
 
 import { Button, PageButton } from "./UI/Button";
 
@@ -17,23 +16,6 @@ import {
   usePagination,
 } from "react-table";
 import GlobalFilter from "./GlobalFilter";
-
-// export function StatusPill({ value }) {
-//   const status = value ? value.toLowerCase() : "unknown";
-
-//   return (
-//     <span
-//       className={classNames(
-//         "px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm",
-//         status.startsWith("active") ? "bg-green-100 text-green-800" : null,
-//         status.startsWith("inactive") ? "bg-yellow-100 text-yellow-800" : null,
-//         status.startsWith("offline") ? "bg-red-100 text-red-800" : null
-//       )}
-//     >
-//       {status}
-//     </span>
-//   );
-// }
 
 const Table = ({ columns, data }) => {
   // Use the state and functions returned from useTable to build UI
@@ -126,8 +108,15 @@ const Table = ({ columns, data }) => {
                             <td
                               {...cell.getCellProps()}
                               className="px-6 py-4 whitespace-nowrap"
+                              role="cell"
                             >
-                              {cell.render("Cell")}
+                              {cell.column.Cell.name === "defaultRenderer" ? (
+                                <div className="text-sm text-gray-500">
+                                  {cell.render("Cell")}
+                                </div>
+                              ) : (
+                                cell.render("Cell")
+                              )}
                             </td>
                           );
                         })}

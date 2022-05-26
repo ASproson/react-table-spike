@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "./components/Table";
 import { StatusPill } from "./components/UI/StatusPill";
+import { AvatarCell } from "./components/UI/AvaterCell";
 
 const getData = () => {
   const data = [
@@ -80,6 +81,9 @@ function App() {
       {
         Header: "Name",
         accessor: "name",
+        Cell: AvatarCell,
+        imgAccessor: "imgUrl",
+        emailAccessor: "email",
       },
       {
         Header: "Title",
