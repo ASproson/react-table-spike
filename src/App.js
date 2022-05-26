@@ -99,12 +99,16 @@ function App() {
   const data = React.useMemo(() => getData(), []);
 
   return (
-    <>
-      <h1>React Table Demo</h1>
-      <div>
-        <Table columns={columns} data={data} />
-      </div>
-    </>
+    <div className="min-h-screen bg-gray-100 text-gray-900">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="">
+          <h1 className="text-xl font-semibold">React Table Demo</h1>
+        </div>
+        <div className="mt-4">
+          <Table columns={columns} data={data} />
+        </div>
+      </main>
+    </div>
   );
 }
 
