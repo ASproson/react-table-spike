@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "./components/Table";
+import Table, { StatusPill } from "./components/Table";
 
 const getData = () => {
   const data = [
@@ -87,6 +87,7 @@ function App() {
       {
         Header: "Status",
         accessor: "status",
+        Cell: StatusPill,
       },
       {
         Header: "Role",
