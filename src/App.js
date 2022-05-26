@@ -1,5 +1,6 @@
 import React from "react";
-import Table, { StatusPill } from "./components/Table";
+import Table from "./components/Table";
+import { StatusPill } from "./components/UI/StatusPill";
 
 const getData = () => {
   const data = [
@@ -19,7 +20,7 @@ const getData = () => {
       email: "cody.fisher@example.com",
       title: "Product Directives Officer",
       department: "Intranet",
-      status: "Active",
+      status: "Inactive",
       role: "Owner",
       age: 43,
       imgUrl:
@@ -41,7 +42,7 @@ const getData = () => {
       email: "jenny.wilson@example.com",
       title: "Central Security Manager",
       department: "Program",
-      status: "Active",
+      status: "Offline",
       role: "Member",
       age: 29,
       imgUrl:
