@@ -1,5 +1,5 @@
 import React from "react";
-import { useTable, useGlobalFilter, useAsyncDebounce } from "react-table";
+import { useAsyncDebounce } from "react-table";
 
 // Default UI for filtering, accepts props provided by Table.jsx
 const GlobalFilter = ({
