@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-table-spike/static/css/main.e7720004.css",
+    "main.js": "/react-table-spike/static/js/main.6507abdd.js",
+    "index.html": "/react-table-spike/index.html",
+    "main.e7720004.css.map": "/react-table-spike/static/css/main.e7720004.css.map",
+    "main.6507abdd.js.map": "/react-table-spike/static/js/main.6507abdd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7720004.css",
+    "static/js/main.6507abdd.js"
+  ]
+}
